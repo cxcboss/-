@@ -1,0 +1,163 @@
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #70B7F5, #2197FF);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+  display: none;
+}
+
+/* 当前天气 */
+.current-weather {
+  margin-bottom: 20px;
+}
+
+.temperature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.temp-highlight {
+  font-size: 60px; /* 加大字体 */
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.detail-item p:first-child {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.detail-item p:last-child {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 预报部分 */
+.forecast-section {
+  margin-top: 20px;
+}
+
+.forecast-section h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.forecast-list {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+}
+
+.forecast-list li {
+  list-style: none;
+  width: 80px;
+  padding: 10px;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.forecast-list li p:first-child {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.forecast-list li p:last-child {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 加载动画 */
+.loading {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-left-color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+  .temp-highlight {
+    font-size: 50px;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-list li {
+    width: 70px;
+    font-size: 10px;
+  }
+
+  .forecast-list li p:first-child {
+    font-size: 12px;
+  }
+
+  .forecast-list li p:last-child {
+    font-size: 14px;
+  }
+}
